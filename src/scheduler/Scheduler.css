@@ -1,0 +1,21 @@
+.scheduler_default_event_inner {
+  height: 25px;
+  background: #18bfad;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  padding: 0px 10px;
+  border-radius: 20px;
+  margin: 4px 2px;
+  /* vertical centering */
+  display: flex;
+  align-items: center;
+}
+
+.scheduler_default_event_bar {
+  opacity: 0;
+}
+
+.scheduler_default_cell {
+  background-color: #fff;
+}

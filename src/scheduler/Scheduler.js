@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {DayPilot, DayPilotScheduler} from "daypilot-pro-react";
+import './Scheduler.css'
 
 class Scheduler extends Component {
 
@@ -7,16 +8,23 @@ class Scheduler extends Component {
     super(props);
 
     this.state = {
-      timeHeaders: [{"groupBy": "Day", "format": "MM/dd"}],
+      timeHeaders: [{"groupBy": "Day", "format": "ddd, MM/dd"}],
       scale: "Day",
       days: 30,
-      startDate: DayPilot.Date.today(),
+      cellWidth: 70,
+      startDate: DayPilot.Date.today().firstDayOfMonth(),
+      timeRangeSelectedHandling: "Disabled",
+      eventMoveHandling: "Disabled",
+      eventResizeHandling: "Disabled",
+      eventDeleteHandling: "Disabled",
+      eventClickHandling: "Disabled",
+      eventRightClickHandling: "Disabled",
     };
   }
 
   componentDidMount() {
 
-    this.scheduler.scrollTo("2020-11-01");
+    // this.scheduler.scrollTo("2020-11-01");
 
     // load resource and event data
     this.setState({
@@ -39,8 +47,6 @@ class Scheduler extends Component {
           start: "2020-11-13T00:00:00",
           end: "2020-11-19T00:00:00",
           resource: "B",
-          barColor: "#38761d",
-          barBackColor: "#93c47d"
         },
         {
           id: 3,
@@ -48,8 +54,6 @@ class Scheduler extends Component {
           start: "2020-11-07T00:00:00",
           end: "2020-11-18T00:00:00",
           resource: "C",
-          barColor: "#f1c232",
-          barBackColor: "#f1c232"
         },
         {
           id: 4,
@@ -57,8 +61,6 @@ class Scheduler extends Component {
           start: "2020-11-20T00:00:00",
           end: "2020-11-26T00:00:00",
           resource: "B",
-          barColor: "#cc0000",
-          barBackColor: "#ea9999"
         }
       ]
     });
