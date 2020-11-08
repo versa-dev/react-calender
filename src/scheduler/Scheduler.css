@@ -12,10 +12,18 @@
   align-items: center;
 }
 
+.scheduler_default_cell_scheduled {
+  background-color: #e9a81e;
+}
+
 .scheduler_default_event_bar {
   opacity: 0;
 }
 
 .scheduler_default_cell {
   background-color: #fff;
+}
+
+.scheduler_default_corner div:nth-of-type(4) {
+  display: none !important;
 }

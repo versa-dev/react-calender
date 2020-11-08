@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {DayPilot, DayPilotScheduler} from "daypilot-pro-react";
+import React, {Component} from 'react'
+import {DayPilot, DayPilotScheduler} from "daypilot-pro-react"
 import './Scheduler.css'
 
 class Scheduler extends Component {
@@ -8,10 +8,11 @@ class Scheduler extends Component {
     super(props);
 
     this.state = {
-      timeHeaders: [{"groupBy": "Day", "format": "ddd, MM/dd"}],
+      timeHeaders: [{"groupBy": "Day", "format": "ddd, MM/d"}],
       scale: "Day",
-      days: 30,
+      days: 30 + DayPilot.Date.today().getDay(),
       cellWidth: 70,
+      rowHeaderWidthAutoFit: false,
       startDate: DayPilot.Date.today().firstDayOfMonth(),
       timeRangeSelectedHandling: "Disabled",
       eventMoveHandling: "Disabled",
@@ -24,10 +25,13 @@ class Scheduler extends Component {
 
   componentDidMount() {
 
-    // this.scheduler.scrollTo("2020-11-01");
+    this.scheduler.scrollTo(DayPilot.Date.today());
 
     // load resource and event data
     this.setState({
+      rowHeaderColumns: [
+        { text: 'Slot #', display: "name" },
+      ],
       resources: [
         {name: "1", id: "A"},
         {name: "2", id: "B"},
