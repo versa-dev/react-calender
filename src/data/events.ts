@@ -1,11 +1,24 @@
-const events = {
+export interface EventElement {
+  id: number;
+  text: string;
+  start: string;
+  end: string;
+  resource: string;
+  backColor?: string;
+}
+
+export interface EventsType {
+  events: EventElement[];
+}
+
+const events: EventsType = {
   events: [
     {
       id: 1,
       text: "Event 1",
       start: "2020-11-01",
       end: "2020-11-13",
-      resource: "A"
+      resource: "A",
     },
     {
       id: 2,
@@ -27,8 +40,8 @@ const events = {
       start: "2020-11-19",
       end: "2020-12-02",
       resource: "B",
-    }
-    ,{
+    },
+    {
       id: 5,
       text: "Event 5",
       start: "2020-11-15",
@@ -62,8 +75,8 @@ const events = {
       start: "2020-11-20",
       end: "2020-11-26",
       resource: "A",
-    }
-  ]
-}
+    },
+  ],
+};
 
-export default events
+export default events;

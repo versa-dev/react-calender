@@ -3,7 +3,7 @@ import Scheduler from './components/scheduler/Scheduler'
 import DisplaySelector from './components/displaySelector/DisplaySelector'
 import './App.css'
 
-function App() {
+const App = () => {
 
   const [dayNum, setDayNum] = useState(30)
 
