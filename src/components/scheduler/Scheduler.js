@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react'
 import {DayPilot, DayPilotScheduler} from "daypilot-pro-react"
-import events from '../data/events'
+import events from '../../data/events'
 import './Scheduler.css'
 
 function Scheduler () {
-
+  const num = 30
   const [config, setConfig] = useState({
     timeHeaders: [{"groupBy": "Day", "format": "ddd, MM/d"}],
     scale: "Day",
-    days: 30 + DayPilot.Date.today().getDay(),
+    days: num + DayPilot.Date.today().getDay(),
     cellWidth: 70,
     rowHeaderWidthAutoFit: false,
     startDate: DayPilot.Date.today().firstDayOfMonth(),

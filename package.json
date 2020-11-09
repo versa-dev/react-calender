@@ -5,6 +5,7 @@
   "license": "SEE LICENSE IN license/LicenseAgreement.pdf",
   "dependencies": {
     "daypilot-pro-react": "https://npm.daypilot.org/daypilot-pro-react/trial/2019.4.4052.tar.gz",
+    "mdbreact": "^4.27.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-scripts": "3.1.2"

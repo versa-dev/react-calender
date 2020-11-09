@@ -12,10 +12,6 @@
   align-items: center;
 }
 
-.scheduler_default_cell_scheduled {
-  background-color: #e9a81e;
-}
-
 .scheduler_default_event_bar {
   opacity: 0;
 }
