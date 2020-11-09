@@ -24,8 +24,8 @@ const events = {
     {
       id: 4,
       text: "Event 4",
-      start: "2020-11-20",
-      end: "2020-11-26",
+      start: "2020-11-19",
+      end: "2020-12-02",
       resource: "B",
     }
     ,{
