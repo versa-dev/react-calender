@@ -3,15 +3,17 @@ import {DayPilot, DayPilotScheduler} from "daypilot-pro-react"
 import events from '../../data/events'
 import './Scheduler.css'
 
-function Scheduler () {
-  const num = 30
+function Scheduler ({dayNum}) {
+
+  const dayRef = useRef();
+
   const [config, setConfig] = useState({
     timeHeaders: [{"groupBy": "Day", "format": "ddd, MM/d"}],
     scale: "Day",
-    days: num + DayPilot.Date.today().getDay(),
-    cellWidth: 70,
+    cellWidth: 80,
     rowHeaderWidthAutoFit: false,
-    startDate: DayPilot.Date.today().firstDayOfMonth(),
+    rowHeaderColumnDefaultWidth: 40,
+    startDate: DayPilot.Date.today(),
     timeRangeSelectedHandling: "Disabled",
     eventMoveHandling: "Disabled",
     eventResizeHandling: "Disabled",
@@ -28,8 +30,6 @@ function Scheduler () {
     ],
   })
 
-  const dayRef = useRef(null);
-
   useEffect(() => {
 
     // Scroll to today in the calender
@@ -38,8 +38,9 @@ function Scheduler () {
     }
 
     // load resource and event data
-    let new_events = {events: []}
+    let new_events = {events: [], days: dayNum + DayPilot.Date.today().getDay()}
     events.events.map(item => {
+
       let date_1 = new Date(item.start)
       let date_2 = DayPilot.Date.today().toDateLocal()
 
@@ -48,10 +49,10 @@ function Scheduler () {
       }
       new_events.events.push(item)
     })
+
     let temp = {...config, ...new_events}
     setConfig(temp)
-
-  }, [dayRef])
+  }, [dayNum])
 
 
   return (

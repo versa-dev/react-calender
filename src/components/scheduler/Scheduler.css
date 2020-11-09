@@ -23,3 +23,15 @@
 .scheduler_default_corner div:nth-of-type(4) {
   display: none !important;
 }
+
+.scheduler_default_rowheader_inner > div {
+  margin: auto;
+}
+.scheduler_default_columnheader_cell_inner > div {
+  margin: auto;
+  left: 7px;
+}
+
+.scheduler_default_columnheader_cell_inner {
+  font-weight: normal;
+}

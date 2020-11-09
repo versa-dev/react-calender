@@ -1,9 +1,9 @@
 import React from 'react';
 
-const DisplaySelector = () => {
+const DisplaySelector = ({ setDayNum }) => {
 
   const onSelect = (e) => {
-    localStorage.setItem('num', Number(e.target.value))
+    setDayNum(Number(e.target.value))
   }
 
   return (
@@ -11,8 +11,8 @@ const DisplaySelector = () => {
       <select className="browser-default custom-select" onChange={onSelect}>
         <option value="60">Next 60 days</option>
         <option value="30" selected="selected">Next 30 days</option>
+        <option value="20">Next 20 days</option>
         <option value="15">Next 15 days</option>
-        <option value="10">Next 10 days</option>
       </select>
     </div>
   );
